@@ -3,7 +3,57 @@ import './Job.css'
 function Job() {
 
     return (
-        <>
+        <>  
+            <div className='job-container'>
+                <div className="job">
+                    <img src="/src/assets/images/photosnap.svg" alt="logo" />
+                    <div className='company-details'>
+                        <span className='company'>Photosnap</span>
+                        <span className='new'>New!</span>
+                        <span className='featured'>Featured</span>
+                    </div>
+                    <h1>Senior Frontend Developer</h1>
+                    <div className='job-details'>
+                        <span>1d ago</span>
+                            <span className='dot'>.</span>
+                        <span>Full Time</span>
+                            <span className='dot'>.</span>
+                        <span>USA only</span>
+                    </div>
+                    <hr />
+                    <div className="job-tags">
+                        <span className='role filter-tablets'>Frontend</span>
+                        <span className='level filter-tablets'>Senior</span>
+                        <span className='languages filter-tablets'>HTML</span>
+                        <span className='languages filter-tablets'>CSS</span>
+                        <span className='languages filter-tablets'>JavaScript</span>
+                        <span className='tools filter-tablets'></span>
+                    </div>
+                </div>
+                <div className="job">
+                    <img src="/src/assets/images/manage.svg" alt="logo" />
+                    <div className='company-details'>
+                        <span className='company'>Manage</span>
+                        <span className='new'>New!</span>
+                        <span className='featured'>Featured</span>
+                    </div>
+                    <h1>Fullstack Developer</h1>
+                    <div className='job-details'>
+                        <span>1d ago</span>
+                            <span className='dot'>.</span>
+                        <span>Part Time</span>
+                            <span className='dot'>.</span>
+                        <span>Remote</span>
+                    </div>
+                    <hr />
+                    <div className="job-tags">
+                        <span className='role filter-tablets'>Fullstack</span>
+                        <span className='level filter-tablets'>Midweight</span>
+                        <span className='languages filter-tablets'>Python</span>
+                        <span className='tools filter-tablets'>React</span>
+                    </div>
+                </div>
+            </div>
             {/* Item Start */}
             Photosnap
             New!

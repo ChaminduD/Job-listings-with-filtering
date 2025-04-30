@@ -12,7 +12,7 @@ function Filter({ filterTags, remove, clear }) {
                             {/* Display the filter tag and a remove icon */}
                             {filterTag}
                             <img
-                                src="/src/assets/images/icon-remove.svg"
+                                src="./images/icon-remove.svg"
                                 alt="remove icon"
                                 onClick={() => remove(index)} // Remove the tag when the icon is clicked
                             />

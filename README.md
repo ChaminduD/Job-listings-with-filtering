@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here](#)
-- Live Site URL: [Live site URL here](#)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/responsive-job-listings-with-filtering-using-react-js-4lfy-9FjIb)
+- Live Site URL: [Live site URL here](https://job-listings-with-filtering-eight-xi.vercel.app/)
 
 ## My process
 

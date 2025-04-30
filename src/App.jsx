@@ -1,12 +1,12 @@
 import './App.css'
-import Job from './Components/Job/Job';
+import JobList from './Components/JobList/JobList';
 import Footer from './Components/Footer/Footer';
 
 function App() {
 
   return (
     <>
-      <Job/>
+      <JobList/>
       <Footer />
     </>
   )

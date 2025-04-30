@@ -1,14 +1,17 @@
 .job-container{
-    margin: 52px 24px 0;
+    margin: 56px 24px 0;
 }
 .job{
     position: relative;
-    padding: 32px 19px 24px;
+    padding: 32px 24px 25px 19px;
     background-color: hsl(0, 0%, 100%);
-    margin-bottom: 40px;
-    border-radius: 6px;
-    border-left: 5px solid hsl(180, 29%, 50%);
-    box-shadow: 0 12px 20px hsla(180, 14%, 20%, 0.08);
+    margin-bottom: -15px;
+    border-radius: 5px;
+    border-left: 5px solid hsl(0, 0%, 100%);
+    box-shadow: 0 10px 16px hsla(180, 70%, 11%, 0.09);
+}
+.featured-job{
+    border-left-color: hsl(180, 29%, 50%);
 }
 .job img{
     position: absolute;
@@ -21,6 +24,7 @@
     align-items: center;
     font-weight: 700;
     font-size: 15px;
+    height: 24px;
 }
 .company{
     color: hsl(180, 29%, 50%);
@@ -44,27 +48,29 @@
     margin-left: 8px;
     letter-spacing: 0.5px;
 }
-.job h1{
+.job-details-container h1{
+    flex-basis: 0;
     font-size: 15px;
     color: hsl(180, 14%, 20%);
     margin-top: 14px;
+    cursor: pointer;
+    width: max-content;
 }
 .job-details{
-    margin-top: 18px;
+    padding: 18px 0 19px;
     color: hsl(180, 8%, 52%);
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: 9px;
+    border-bottom: 1px solid hsl(180, 8%, 52%);
 }
 .job-details .dot{
     font-weight: 900;
-}
-hr{
-    margin-top: 19px;
+    transform: translateY(-22%);
 }
 .job-tags{
-    margin-top: 15px;
+    margin-top: 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -74,5 +80,84 @@ hr{
     font-weight: 700;
     background-color: hsl(180, 31%, 95%);
     padding: 10px 9px 8px;
-    border-radius: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (hover: hover){
+    .job h1:hover{
+        color: hsl(180, 29%, 50%);
+    }
+    .job-tags .filter-tablets:hover{
+        color: hsl(180, 31%, 95%);
+        background-color: hsl(180, 29%, 50%);
+    }
+}
+.job h1:active{
+    color: hsl(180, 29%, 50%);
+}
+.job-tags .filter-tablets:active{
+    color: hsl(180, 31%, 95%);
+    background-color: hsl(180, 29%, 50%);
+}
+
+@media (min-width: 426px){
+    .job-container{
+        display: flex;
+        justify-content: center;
+        width: calc(100% - 48px);
+    }
+    .job{
+        width: 100%;
+        max-width: 600px;
+    }
+    .company-details{
+        font-size: 18px;
+    }
+    .job-details-container h1{
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1025px){
+    .job-container{
+        margin-top: 75px;
+    }
+    .job{
+        width: 100%;
+        max-width: 1110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 146px;
+        padding-right: 40px;
+        padding-bottom: 36px;
+        margin-bottom: -52px;
+        border-left: 6px solid hsl(0, 0%, 100%);
+    }
+    .featured-job{
+        border-left-color: hsl(180, 29%, 50%);
+    }
+    .job img{
+        width: 88px;
+        height: 88px;
+        top: 32px;
+        left: 35px;
+    }
+    .job-details{
+        padding-bottom: 0px;
+        padding-top: 12px;
+        font-size: 18px;
+        border-bottom: none;
+        gap: 15px;
+    }
+    .job-tags{
+        margin-top: 0px;
+    }
+    .company{
+        margin-right: 16px;
+    }
+    .job-details-container h1{
+        margin-top: 12px;
+    }
 }

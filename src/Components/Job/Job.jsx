@@ -1,230 +1,80 @@
+import PropTypes from 'prop-types';
 import './Job.css'
 
-function Job() {
+function Job({
+    company,
+    logo,
+    newJob,
+    featured,
+    position,
+    role,
+    level,
+    postedAt,
+    contract,
+    location,
+    languages,
+    tools,
+    onClick
+}) {
 
     return (
         <>  
             <div className='job-container'>
-                <div className="job">
-                    <img src="/src/assets/images/photosnap.svg" alt="logo" />
-                    <div className='company-details'>
-                        <span className='company'>Photosnap</span>
-                        <span className='new'>New!</span>
-                        <span className='featured'>Featured</span>
+                <div className={`job ${featured ? "featured-job" : ""}`}> {/* Apply 'featured-job' class if the job is featured */}
+                    {/* Display company logo */}
+                    <img src={logo} alt="logo" />
+                    {/* Container for job details */}
+                    <div className='full-job-details'>
+                        <div className='company-details'>
+                            <span className='company'>{company}</span>
+                            {newJob ? <span className='new'>New!</span> : ""} {/* Show 'New!' tag if applicable */}
+                            {featured ? <span className='featured'>Featured</span> : ""} {/* Show 'Featured' tag if applicable */}
+                        </div>
+                        
+                        <div className='job-details-container'>
+                            <h1>{position}</h1>
+                            <div className='job-details'>
+                                <span>{postedAt}</span>
+                                    <span className='dot'>.</span>
+                                <span>{contract}</span>
+                                    <span className='dot'>.</span>
+                                <span>{location}</span>
+                            </div>
+                        </div>
                     </div>
-                    <h1>Senior Frontend Developer</h1>
-                    <div className='job-details'>
-                        <span>1d ago</span>
-                            <span className='dot'>.</span>
-                        <span>Full Time</span>
-                            <span className='dot'>.</span>
-                        <span>USA only</span>
-                    </div>
-                    <hr />
+                    
                     <div className="job-tags">
-                        <span className='role filter-tablets'>Frontend</span>
-                        <span className='level filter-tablets'>Senior</span>
-                        <span className='languages filter-tablets'>HTML</span>
-                        <span className='languages filter-tablets'>CSS</span>
-                        <span className='languages filter-tablets'>JavaScript</span>
-                        <span className='tools filter-tablets'></span>
-                    </div>
-                </div>
-                <div className="job">
-                    <img src="/src/assets/images/manage.svg" alt="logo" />
-                    <div className='company-details'>
-                        <span className='company'>Manage</span>
-                        <span className='new'>New!</span>
-                        <span className='featured'>Featured</span>
-                    </div>
-                    <h1>Fullstack Developer</h1>
-                    <div className='job-details'>
-                        <span>1d ago</span>
-                            <span className='dot'>.</span>
-                        <span>Part Time</span>
-                            <span className='dot'>.</span>
-                        <span>Remote</span>
-                    </div>
-                    <hr />
-                    <div className="job-tags">
-                        <span className='role filter-tablets'>Fullstack</span>
-                        <span className='level filter-tablets'>Midweight</span>
-                        <span className='languages filter-tablets'>Python</span>
-                        <span className='tools filter-tablets'>React</span>
+                        <span className='role filter-tablets' onClick={onClick}>{role}</span>
+                        <span className='level filter-tablets' onClick={onClick}>{level}</span>
+                        {/* Dynamically render required languages */}
+                        {languages.map((language, index) => (
+                            <span key={index} className='languages filter-tablets' onClick={onClick}>{language}</span>
+                        ))}
+                        {/* Dynamically render required tools */}
+                        {tools.map((tool, index) => (
+                            <span key={index} className='tools filter-tablets' onClick={onClick}>{tool}</span>
+                        ))}
                     </div>
                 </div>
             </div>
-            {/* Item Start */}
-            Photosnap
-            New!
-            Featured
-            Senior Frontend Developer
-            1d ago
-            Full Time
-            USA only
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Senior
-            {/* Languages */}
-            HTML
-            CSS
-            JavaScript
-            {/* Item End */}
-
-            {/* Item Start */}
-            Manage
-            New!
-            Featured
-            Fullstack Developer
-            1d ago
-            Part Time
-            Remote
-            {/* Role */}
-            Fullstack
-            {/* Level */}
-            Midweight
-            {/* Languages */}
-            Python
-            {/* Tools  */}
-            React
-            {/* Item End */}
-
-            {/* Item Start */}
-            Account
-            New!
-            Junior Frontend Developer
-            2d ago
-            Part Time
-            USA only
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            JavaScript
-            {/* Tools  */}
-            React
-            Sass
-            {/* Item End */}
-
-            {/* Item Start */}
-            MyHome
-            Junior Frontend Developer
-            5d ago
-            Contract
-            USA only
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            CSS
-            JavaScript
-            {/* Item End */}
-
-            {/* Item Start */}
-            Loop Studios
-            Software Engineer
-            1w ago
-            Full Time
-            Worldwide
-            {/* Role */}
-            Fullstack
-            {/* Level */}
-            Midweight
-            {/* Languages */}
-            JavaScript
-            Ruby
-            {/* Tools  */}
-            Sass
-            {/* Item End */}
-
-            {/* Item Start */}
-            FaceIt
-            Junior Backend Developer
-            2w ago
-            Full Time
-            UK only
-            {/* Role */}
-            Backend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            Ruby
-            {/* Tools  */}
-            RoR
-            {/* Item End */}
-
-            {/* Item Start */}
-            Shortly
-            Junior Developer
-            2w ago
-            Full Time
-            Worldwide
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            HTML
-            JavaScript
-            {/* Tools  */}
-            Sass
-            {/* Item End */}
-
-            {/* Item Start */}
-            Insure
-            Junior Frontend Developer
-            2w ago
-            Full Time
-            USA only
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            JavaScript
-            {/* Tools  */}
-            Vue
-            Sass
-            {/* Item End */}
-
-            {/* Item Start */}
-            Eyecam Co.
-            Full Stack Engineer
-            3w ago
-            Full Time
-            Worldwide
-            {/* Role */}
-            Fullstack
-            {/* Level */}
-            Midweight
-            {/* Languages */}
-            JavaScript
-            Python
-            {/* Tools  */}
-            Django
-            {/* Item End */}
-
-            {/* Item Start */}
-            The Air Filter Company
-            Front-end Dev
-            1mo ago
-            Part Time
-            Worldwide
-            {/* Role */}
-            Frontend
-            {/* Level */}
-            Junior
-            {/* Languages */}
-            JavaScript
-            {/* Tools  */}
-            React
-            Sass
-            {/* Item End */}
         </>
     );
+}
+
+Job.propTypes = {
+    company: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    newJob: PropTypes.bool.isRequired,
+    featured: PropTypes.bool.isRequired,
+    position: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    level: PropTypes.string.isRequired,
+    postedAt: PropTypes.string.isRequired,
+    contract: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    languages: PropTypes.arrayOf(PropTypes.string).isRequired,
+    tools: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
 }
 
 export default Job;

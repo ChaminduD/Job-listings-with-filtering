@@ -1,7 +1,11 @@
 .attribution{
     font-size: 11px;
     text-align: center;
+    color: hsl(180, 14%, 20%);
+    padding: 10px 0;
 }
 .attribution a{
-    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
 }

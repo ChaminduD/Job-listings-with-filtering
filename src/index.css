@@ -7,3 +7,27 @@
 body{
     background-color: hsl(180, 52%, 96%);
 }
+
+.bg-header-image{
+    background-color: hsl(180, 29%, 50%);
+    height: 156px;
+}
+.bg-header-image picture img{
+    display: flex;
+    width: 100%;
+
+}
+
+@media (min-width: 280px){
+    .bg-header-image{
+        overflow: hidden;
+    }
+    .bg-header-image picture img{
+        width: auto;
+    }
+}
+@media (min-width: 1441px){
+    .bg-header-image picture img{
+        width: 100%;
+    }
+}
